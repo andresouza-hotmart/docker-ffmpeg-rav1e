@@ -104,5 +104,4 @@ RUN apt-get update -qq && apt-get -y install \
     libfdk-aac-dev \
     libmp3lame-dev
 
-#ENTRYPOINT ["/root/bin/ffmpeg"]
-CMD ["/bin/bash"]
+ENTRYPOINT ["/root/bin/ffmpeg"]
