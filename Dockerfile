@@ -53,8 +53,7 @@ RUN apt-get -y install \
     libfdk-aac-dev \
     libmp3lame-dev \
     libopus-dev
-RUN apt-get -y upgrade
-    
+
 RUN mkdir -p ~/ffmpeg_sources ~/bin
 RUN cd ~/ffmpeg_sources && \
     wget -O ffmpeg-snapshot.tar.bz2 https://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2 && \
@@ -88,6 +87,5 @@ RUN /bin/bash -c "source /root/.profile"
 RUN echo 'export PATH="/root/bin:$PATH"' >> ~/.bashrc
 
 
-
-#CMD ["ffmpeg"]
-CMD ["bash"]
+#ENTRYPOINT ["/root/bin/ffmpeg"]
+CMD ["/bin/bash"]
